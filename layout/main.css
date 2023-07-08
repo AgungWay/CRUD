@@ -1,0 +1,74 @@
+html,
+body {
+  background-color: #cbd0d8;
+  height: 100%;
+  margin-bottom: 70px;
+  padding-bottom: 70px;
+}
+
+.crudModal {
+  background-color: #cbd0d8;
+}
+
+.btn-gold {
+  background-color: #d3ac2b;
+  color: black;
+  opacity: 1;
+  font-family: Oswald;
+}
+.btn-gold:hover {
+  background-color: rgb(160, 147, 71);
+  color: white;
+  opacity: 1;
+}
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  color: #fff;
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-weight: 200 !important;
+  font-size: 14px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .active {
+  border-bottom: 4px solid #fff;
+}
+
+.logo {
+  margin-bottom: 7px !important;
+}
+
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url(../public/font/OswaldRegular.ttf);
+}
+
+@font-face {
+  font-family: HelveticaNue;
+  src: url(./public/font/HelveticaNeueUltraLight.ttf);
+}
+
+@font-face {
+  font-family: MalgunSemilight;
+  src: url(./public/font/Malgungothicsemilight.ttf);
+}
+
+.nav-link a {
+  font-family: MalgunSemilight;
+}
+td {
+  height: 50px;
+}
