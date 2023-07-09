@@ -17,7 +17,7 @@ if (isset($_GET['cari'])) {
 ?>
 
 
-<div class="container-fluid d-flex align-items-center justify-content-center mt-3 mx-8">
+<div class="container-fluid d-flex align-items-center justify-content-center mt-5 mx-8">
     <div class="row">
         <div class="col-md-15">
             <div class="modals">
@@ -26,17 +26,13 @@ if (isset($_GET['cari'])) {
 
                 <div class="modal-hapus"><?php include "./form_hapus.php" ?></div>
             </div>
-
-
-            <div class="row">
+            <div class="row" style="position : absolute;">
                 <div class="col">
                     <button type="button" class="btn btn-gold mb-3" data-bs-toggle="modal" data-bs-target="#form-tambah">
                         <img src="./public/images/tambah.svg" width="20px" alt="">
                         Tambah Data
                     </button>
                 </div>
-
-
             </div>
 
             <table id="dataMhs" class="table table-striped  table-dark mt-3" style="width: auto;">

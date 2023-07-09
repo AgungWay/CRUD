@@ -14,7 +14,7 @@
                 <a class="nav-link" href="#">TENTANG</a>
                 <img src="./public/images/github.svg" class="rounded" width="35px" height="35px">
                 </a>
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="https://github.com/AgungWay/CRUD">
                     GitHub</a>
 
             </div>

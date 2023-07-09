@@ -18,7 +18,6 @@ function create($post)
 {
     global $conn;
 
-
     //  menangkap variabel yang di kirim
     $nim = $post["nim"];
     $prodi = $post["prodi"];
@@ -27,7 +26,6 @@ function create($post)
 
     // mengambil informasi upload file
     $fileTmp = $_FILES['foto']['tmp_name'];
-    // $fileExt = pathinfo($fileName, PATHINFO_EXTENSION);
 
     // simpan foto
     $newFileName = "foto_" . $nama . '.png';
@@ -36,14 +34,13 @@ function create($post)
     move_uploaded_file($fileTmp, $targetFile);
 
 
-    // Cek apakah ada data Duplikat
+    // Cek duplikat data
     $query = "SELECT COUNT(*) FROM mahasiswa WHERE nim = ? OR nama = ?";
     $statement = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($statement, "ss", $nim, $nama);
     mysqli_stmt_execute($statement);
     mysqli_stmt_bind_result($statement, $count);
-    mysqli_stmt_fetch($statement);
-    mysqli_stmt_close($statement);
+
     if ($count > 0) {
         return false;
     }
@@ -63,6 +60,9 @@ function create($post)
     if (mysqli_stmt_affected_rows($statement) > 0) {
         return true;
     } else {
+        if (file_exists($dir . '/foto_' . $nama)) {
+            unlink($dir . '/foto_' . $nama);
+        }
         return false;
     }
 }
@@ -87,9 +87,6 @@ function update($post)
     $dir = './public/foto_mhs/';
     $targetFile = $dir . $newFileName;
     move_uploaded_file($fileTmp, $targetFile);
-
-
-
 
     $query = "UPDATE mahasiswa SET prodi = ?, nama = ?, alamat = ?, foto = ? WHERE nim = ?";
     $statement = mysqli_prepare($conn, $query);
