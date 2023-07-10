@@ -13,16 +13,16 @@ function select($query)
 };
 
 
-// Fungsi tambah Data
+// Fungsi Tambah Data
 function create($post)
 {
     global $conn;
 
-    //  menangkap variabel yang di kirim
     $nim = $post["nim"];
     $prodi = $post["prodi"];
     $nama = $post["nama"];
     $alamat = $post["alamat"];
+
 
     // mengambil informasi upload file
     $fileTmp = $_FILES['foto']['tmp_name'];
@@ -33,39 +33,38 @@ function create($post)
     $targetFile = $dir . $newFileName;
     move_uploaded_file($fileTmp, $targetFile);
 
-
-    // Cek duplikat data
-    $query = "SELECT COUNT(*) FROM mahasiswa WHERE nim = ? OR nama = ?";
-    $statement = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($statement, "ss", $nim, $nama);
-    mysqli_stmt_execute($statement);
-    mysqli_stmt_bind_result($statement, $count);
+    // cek Data Duplikat
+    $queryCheck = "SELECT COUNT(*) FROM mahasiswa WHERE nim = ? OR nama = ?";
+    $statementCheck = mysqli_prepare($conn, $queryCheck);
+    mysqli_stmt_bind_param($statementCheck, "ss", $nim, $nama);
+    mysqli_stmt_execute($statementCheck);
+    mysqli_stmt_bind_result($statementCheck, $count);
+    mysqli_stmt_fetch($statementCheck);
 
     if ($count > 0) {
         return false;
     }
 
-
-    // siapkan statement query dan datbase
-    $query = "INSERT INTO mahasiswa VALUES (null, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO mahasiswa (nim, prodi, nama, alamat, foto) VALUES (?, ?, ?, ?, ?)";
     $statement = mysqli_prepare($conn, $query);
 
-    // memasukkan parameter dengan statement
-    mysqli_stmt_bind_param($statement, "sssss", $nim, $nama, $alamat, $prodi, $newFileName);
+    // mengikat parameter dengan statement
+    mysqli_stmt_bind_param($statement, "sssss", $nim, $prodi, $nama, $alamat, $newFileName);
 
     // Execute proses
     mysqli_stmt_execute($statement);
 
-    // cek berhasil
+    // Check berhasil
     if (mysqli_stmt_affected_rows($statement) > 0) {
         return true;
     } else {
-        if (file_exists($dir . '/foto_' . $nama)) {
-            unlink($dir . '/foto_' . $nama);
-        }
         return false;
     }
 }
+
+
+
+
 
 
 // Fungsi update

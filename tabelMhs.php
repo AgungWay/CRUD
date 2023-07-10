@@ -6,13 +6,8 @@ include "./layout/header.php";
 
 $data_mhs = [];
 
-if (isset($_GET['cari'])) {
-    $searchValue = $_GET['cari'];
-    $query = "SELECT * FROM mahasiswa WHERE nim LIKE '%$searchValue%' OR prodi LIKE '%$searchValue%' OR nama LIKE '%$searchValue%' OR alamat LIKE '%$searchValue%'";
-    $data_mhs = select($query);
-} else {
-    $data_mhs = select("SELECT * FROM mahasiswa");
-}
+$data_mhs = select("SELECT * FROM mahasiswa");
+
 
 ?>
 

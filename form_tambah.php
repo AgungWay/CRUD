@@ -30,7 +30,7 @@ if (isset($_POST['simpan'])) {
             </div>
             <div class="modal-body" style="border-bottom: 0.3px solid rgb(82, 81, 81);">
                 <!-- TES -->
-                <form id="tambah" action="./index.php" method="post" enctype="multipart/form-data">
+                <form id="simpan" action="./index.php" method="post" enctype="multipart/form-data">
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <div class=" col-md-3">
