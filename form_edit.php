@@ -37,7 +37,7 @@ if (isset($_POST['edit'])) {
                                     $filePath = './public/foto_mhs/' . $mhs["foto"];
 
                                     if (is_readable($filePath) && file_exists($filePath) == true) {
-                                        echo '<img src="./public/foto_mhs/' . $mhs["foto"] . '" alt="Belum ada Foto !" class="img-fluid mt-3" width="200px">';
+                                        echo '<img src="./public/foto_mhs/' . $mhs["foto"] . '" alt="Belum ada Foto !" class="img-fluid mt-3 rounded" width="200px">';
                                         echo '<script>console.log("DATA ADA !");</script>';
                                     } else {
                                         echo '<img src="./public/default.png" alt="" class="img-fluid mt-3" width="200px">';

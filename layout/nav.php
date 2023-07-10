@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-dark sticky-top mb-0">
     <div class="container">
-        <a class="navbar-brand d-flex justify-content-start" href="#">
+        <!-- <a class="navbar-brand d-flex justify-content-start" href="#">
             <img src="https://img.icons8.com/nolan/48/warning-shield.png" width="35px" />
-        </a>
+        </a> -->
         <div class="nav-brand d-flex justify-content-start">
             <h1 class="nav-item" style="color:white; font-family: Oswald;">DATA MAHASISWA</h1>
         </div>
@@ -14,7 +14,7 @@
                 <a class="nav-link" href="#">TENTANG</a>
                 <img src="./public/images/github.svg" class="rounded" width="35px" height="35px">
                 </a>
-                <a class="nav-link" href="https://github.com/AgungWay/CRUD">
+                <a target="_blank" class="nav-link" href="https://github.com/AgungWay/CRUD">
                     GitHub</a>
 
             </div>
