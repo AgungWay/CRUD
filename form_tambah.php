@@ -11,14 +11,6 @@ if (isset($_POST['simpan'])) {
 
 ?>
 
-
-<!-- Button trigger modal -->
-
-
-
-
-<!-- Modal -->
-
 <div class="modal fade bd-example-modal-lg" id="form-tambah" tabindex="-1" role="dialog" aria-labelledby="form-tambahTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content crudModal">
@@ -35,7 +27,7 @@ if (isset($_POST['simpan'])) {
                         <div class="row align-items-center">
                             <div class=" col-md-3">
                                 <img src="./public/default.png" alt="" class="img-fluid mt-3" width="150px">
-                                <input type="file" class="img-fluid mt-2" id="foto" name="foto">
+                                <input type="file" accept="image/*" class="img-fluid mt-2" id="foto" name="foto">
                             </div>
                             <div class="col-md">
 
